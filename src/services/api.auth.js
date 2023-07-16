@@ -10,8 +10,9 @@ const auth = async () => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                identity: 'contact@marcobardalesrodriguez.site',
-                password: 'JrpG3Lq4_cUdxGq'
+                // use environment variables to hide this data
+                identity: `${process.env.REACT_APP_API_IDENTITY}`,
+                password: `${process.env.REACT_APP_API_PASSWORD}`
             })
         })
         const data = await response.json()
@@ -29,5 +30,5 @@ export const login = async () => {
     if (sessionStorage.getItem('API_TOKEN')) return
     const authorization = await auth()
     if (authorization) sessionStorage.setItem('API_TOKEN', authorization.token)
-    console.log(sessionStorage.getItem('API_TOKEN'))
+    //console.log(sessionStorage.getItem('API_TOKEN'))
 }

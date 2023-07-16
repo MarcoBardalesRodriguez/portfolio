@@ -1,7 +1,7 @@
 import { Stack, Figure } from "react-bootstrap"
 
 export const CardSkills = ({ skills }) => {
-    console.log(skills)
+    //console.log(skills)
     //sorted skills by name
     skills.sort((a, b) => {
         if (a.name > b.name) {
@@ -16,7 +16,7 @@ export const CardSkills = ({ skills }) => {
         <Stack gap={2} direction="horizontal" className="flex-wrap">
             {skills.map((skill) => {
                 return (
-                    <Figure className="bg-light p-2 text-center rounded shadow">
+                    <Figure key={skill.id} className="bg-light p-2 text-center rounded shadow">
                         <Figure.Image
                             width={70}
                             height={70}

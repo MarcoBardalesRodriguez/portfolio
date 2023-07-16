@@ -12,8 +12,8 @@ export const TabAboutMe = () => {
             const data = await getAboutUsers();
             setAboutUsers(data);
             setLoading(false);
-            console.log("aboutUsers");
-            console.log(data);
+            //console.log("aboutUsers");
+            //console.log(data);
         }
         fetchAboutUsers();
 
